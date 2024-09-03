@@ -11,11 +11,11 @@ CREATE TABLE IF NOT EXISTS partners (
     id VARCHAR(255) PRIMARY KEY,
     companyName VARCHAR(255),
     commercialContact VARCHAR(255),
-    transportationType TransportType,
+    transportType TransportType,
     geographicalArea VARCHAR(255),
     specialConditions TEXT,
     partnerStatus PartnerStatus,
-    creationDate TIMESTAMP,
+    creationDate DATE,
     createdAt TIMESTAMP DEFAULT current_timestamp
 );
 
