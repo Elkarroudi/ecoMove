@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS partners (
     specialConditions TEXT,
     partnerStatus PartnerStatus,
     creationDate DATE,
-    createdAt TIMESTAMP DEFAULT current_timestamp
+    createdAt TIMESTAMP DEFAULT current_timestamp,
+    deletedAt TIMESTAMP NULL
 );
 
 CREATE TABLE IF NOT EXISTS contracts (
@@ -29,6 +30,7 @@ CREATE TABLE IF NOT EXISTS contracts (
     renewable BOOLEAN,
     contractStatus ContractStatus,
     createdAt TIMESTAMP DEFAULT current_timestamp,
+    deletedAt TIMESTAMP NULL,
     FOREIGN KEY (partnerId) REFERENCES partners(id)
 );
 
@@ -44,6 +46,7 @@ CREATE TABLE IF NOT EXISTS offers (
     conditions TEXT,
     offerStatus OfferStatus,
     createdAt TIMESTAMP DEFAULT current_timestamp,
+    deletedAt TIMESTAMP NULL,
     FOREIGN KEY (contractId) REFERENCES contracts(id)
 
 );
@@ -57,5 +60,6 @@ CREATE TABLE IF NOT EXISTS tickets (
     soldDate TIMESTAMP,
     ticketStatus TicketStatus,
     createdAt TIMESTAMP DEFAULT current_timestamp,
+    deletedAt TIMESTAMP NULL,
     FOREIGN KEY (contractId) REFERENCES contracts(id)
 );

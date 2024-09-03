@@ -19,7 +19,6 @@ public class Partner {
     private ArrayList<Contract> contracts = new ArrayList<>();
 
 
-    public Partner() {}
     public Partner(String id, String companyName, String commercialContact, TransportType transportType, String geographicalArea, String specialConditions, PartnerStatus partnerStatus, Date creationDate) {
         this.id = id;
         this.companyName = companyName;
