@@ -11,7 +11,7 @@ public class ConfigLoader {
         env = new Properties();
         try (InputStream inputFile = getClass().getResourceAsStream("/main/com/ecoMove/config/env.properties")) {
             if (inputFile == null) {
-                System.out.println("Sorry, unable to find env.properties");
+                System.err.println("Sorry, unable to find env.properties");
                 return;
             }
             env.load(inputFile);
