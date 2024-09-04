@@ -18,7 +18,6 @@ public class Contract {
     private ArrayList<Ticket> tickets = new ArrayList<>();
     private ArrayList<Offer> offers = new ArrayList<>();
 
-    public Contract() {}
     public Contract (String id, Partner partner, Date startDate, Date endDate, Double specialRate, String agreementConditions, Boolean renewable, ContractStatus contractStatus) {
         this.id = id;
         this.partner = partner;

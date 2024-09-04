@@ -23,8 +23,8 @@ CREATE TABLE IF NOT EXISTS partners (
 CREATE TABLE IF NOT EXISTS contracts (
     id VARCHAR(255) PRIMARY KEY,
     partnerId VARCHAR(255),
-    startDate TIMESTAMP,
-    endDate  TIMESTAMP,
+    startDate DATE,
+    endDate  DATE,
     specialRate DOUBLE PRECISION,
     agreementConditions VARCHAR(255),
     renewable BOOLEAN,
