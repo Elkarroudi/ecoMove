@@ -1,7 +1,9 @@
 package main.com.ecoMove.utils;
 
+import main.com.ecoMove.enums.ContractStatus;
 import main.com.ecoMove.enums.PartnerStatus;
 import main.com.ecoMove.enums.TransportType;
+import main.com.ecoMove.models.Contract;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -109,6 +111,62 @@ public class EnumHelper {
                         return PartnerStatus.SUSPENDED;
                     case 3 :
                         return PartnerStatus.EXPIRED;
+                    default:
+                        System.out.println("INVALID CHOICE !");
+                        break;
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("invalid input , please give a number");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    public static ContractStatus handleContractStatusEnums (Scanner scanner) {
+        while (true) {
+            System.out.println("Please select the Contract Status : \n");
+            System.out.println("1. Ongoing / 2. Terminated / 3. Suspended");
+
+            try{
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        return ContractStatus.ONGOING;
+                    case 2 :
+                        return ContractStatus.TERMINATED;
+                    case 3 :
+                        return ContractStatus.SUSPENDED;
+                    default:
+                        System.out.println("INVALID CHOICE !");
+                        break;
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("invalid input , please give a number");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    public static ContractStatus handleContractStatusEnumsUpdate (Scanner scanner, ContractStatus OldValue) {
+        while (true) {
+            System.out.println("Please select the Contract Status : \n");
+            System.out.println("0.To Remain Old Value  / 1. Ongoing / 2. Terminated / 3. Suspended");
+
+            try{
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 0:
+                        return OldValue;
+                    case 1:
+                        return ContractStatus.ONGOING;
+                    case 2 :
+                        return ContractStatus.TERMINATED;
+                    case 3 :
+                        return ContractStatus.SUSPENDED;
                     default:
                         System.out.println("INVALID CHOICE !");
                         break;
