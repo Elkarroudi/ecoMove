@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     transportType TransportType,
     purchasePrice DOUBLE PRECISION,
     salePrice DOUBLE PRECISION,
-    soldDate TIMESTAMP,
+    soldDate TIMESTAMP NULL,
     ticketStatus TicketStatus,
     createdAt TIMESTAMP DEFAULT current_timestamp,
     deletedAt TIMESTAMP NULL,

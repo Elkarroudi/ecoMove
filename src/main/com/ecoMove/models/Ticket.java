@@ -12,18 +12,18 @@ public class Ticket {
     private TransportType transportType;
     private double purchasePrice;
     private double salePrice;
-    private Timestamp saleDate;
+    private Timestamp soldDate;
     private TicketStatus ticketStatus;
 
 
-    public Ticket (String id, Contract contract, TransportType transportType, double purchasePrice, double salePrice, Timestamp saleDate, TicketStatus ticketStatus) {
+    public Ticket (String id, Contract contract, TransportType transportType, double purchasePrice, double salePrice, TicketStatus ticketStatus, Timestamp soldDate) {
         this.id = id;
         this.contract = contract;
         this.transportType = transportType;
         this.purchasePrice = purchasePrice;
         this.salePrice = salePrice;
-        this.saleDate = saleDate;
         this.ticketStatus = ticketStatus;
+        this.soldDate = soldDate;
     }
 
     public String getId() {
@@ -60,11 +60,11 @@ public class Ticket {
         this.salePrice = salePrice;
     }
 
-    public Timestamp getSaleDate() {
-        return saleDate;
+    public Timestamp getSoldDate() {
+        return soldDate;
     }
-    public void setSaleDate(Timestamp saleDate) {
-        this.saleDate = saleDate;
+    public void setSoldDate(Timestamp soldDate) {
+        this.soldDate = soldDate;
     }
 
     public TicketStatus getTicketStatus() {

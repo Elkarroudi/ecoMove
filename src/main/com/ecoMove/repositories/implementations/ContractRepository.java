@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class ContractRepository implements ContractRepositoryInterface {
 
-    public Connection connection;
-    public PartnerRepository partnerRepository;
+    private Connection connection;
+    private PartnerRepository partnerRepository;
     public ContractRepository() throws SQLException, IOException {
         this.connection = PgsqlConnection.getInstance().getConnection();
         this.partnerRepository = new PartnerRepository();

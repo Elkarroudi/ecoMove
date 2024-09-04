@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class PartnerRepository implements PartnerRepositoryInterface {
 
-    public Connection connection;
+    private Connection connection;
     public PartnerRepository() throws SQLException, IOException {
         this.connection = PgsqlConnection.getInstance().getConnection();
     }
