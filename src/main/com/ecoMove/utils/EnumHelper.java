@@ -2,6 +2,7 @@ package main.com.ecoMove.utils;
 
 import main.com.ecoMove.enums.ContractStatus;
 import main.com.ecoMove.enums.PartnerStatus;
+import main.com.ecoMove.enums.TicketStatus;
 import main.com.ecoMove.enums.TransportType;
 import main.com.ecoMove.models.Contract;
 
@@ -179,4 +180,59 @@ public class EnumHelper {
         }
     }
 
+    public static TicketStatus handleTicketStatus (Scanner scanner) {
+        while (true) {
+            System.out.println("Please select the Contract Status : \n");
+            System.out.println("1. Available / 2. sold / 3. cancelled");
+
+            try{
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        return TicketStatus.AVAILABLE;
+                    case 2 :
+                        return TicketStatus.SOLD;
+                    case 3 :
+                        return TicketStatus.CANCELLED;
+                    default:
+                        System.out.println("INVALID CHOICE !");
+                        break;
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("invalid input , please give a number");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    public static TicketStatus handleTicketStatusUpdate (Scanner scanner, TicketStatus OldValue) {
+        while (true) {
+            System.out.println("Please select the Contract Status : \n");
+            System.out.println("0.To Remain Old Value / 1. Available / 2. sold / 3. cancelled");
+
+            try{
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 0:
+                        return OldValue;
+                    case 1:
+                        return TicketStatus.AVAILABLE;
+                    case 2 :
+                        return TicketStatus.SOLD;
+                    case 3 :
+                        return TicketStatus.CANCELLED;
+                    default:
+                        System.out.println("INVALID CHOICE !");
+                        break;
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("invalid input , please give a number");
+                scanner.nextLine();
+            }
+        }
+    }
 }
